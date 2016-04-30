@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1"
+    android:background="@color/material_deep_teal_200">
+    <TableRow>
+        <TextView android:text="SALARIO"
+            android:textColor="@color/abc_primary_text_disable_only_material_light"
+            android:textStyle="bold" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Listo"
+            android:id="@+id/button3"
+            android:layout_column="1"
+            android:onClick="enviarDatos"/>
+    </TableRow>
+    <TableRow>
+        <TextView android:text="0-$200"/>
+        <CheckBox android:id="@+id/check1"
+            android:text=""
+            android:onClick="metodo1"/>
+    </TableRow>
+    <TableRow>
+        <TextView android:text="$200-$500"/>
+        <CheckBox android:id="@+id/check2"
+            android:text=""
+            android:onClick="metodo2"/>
+    </TableRow>
+    <TableRow>
+        <TextView android:text="$500-mas"/>
+        <CheckBox android:id="@+id/check3"
+            android:text=""
+            android:onClick="metodo3"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView android:text="TIPO DE CONTRATACION"
+            android:textColor="@color/abc_primary_text_material_light"
+            android:textStyle="bold" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="Tiempo Parcial"/>
+        <CheckBox android:id="@+id/check4"
+            android:text=""
+            android:onClick="metodo4"/>
+    </TableRow>
+    <TableRow>
+        <TextView android:text="Tiempo Completo"/>
+        <CheckBox android:id="@+id/check5"
+            android:text=""
+            android:onClick="metodo5"/>
+    </TableRow>
+    <TableRow>
+        <TextView android:text="GENERO"
+            android:textColor="@color/abc_primary_text_disable_only_material_light"
+            android:textStyle="bold" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="Masculino"/>
+        <CheckBox android:id="@+id/check6"
+            android:text=""
+            android:onClick="metodo6"/>
+    </TableRow>
+    <TableRow>
+        <TextView android:text="Femenino"/>
+        <CheckBox android:id="@+id/check7"
+            android:text=""
+            android:onClick="metodo7"/>
+    </TableRow>
+    <TableRow>
+        <TextView android:text="Por Defecto"/>
+        <CheckBox android:id="@+id/check8"
+            android:text=""
+            android:onClick="metodo8"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="CARGO"
+            android:id="@+id/textView2"
+            android:layout_column="0"
+            android:textColor="@color/abc_primary_text_material_light"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Spinner android:id="@+id/spinner"
+            android:layout_column="0" />
+    </TableRow>
+
+
+</TableLayout>

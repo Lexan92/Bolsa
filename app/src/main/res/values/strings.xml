@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Bolsa</string>
+    <string name="ofertas">Ofertas</string>
+    <string name="filtro">Filtro</string>
+    <string name="action_clear">Limpiar</string>
+
+
+</resources>
