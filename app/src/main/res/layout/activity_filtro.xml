@@ -7,7 +7,8 @@
     <TableRow>
         <TextView android:text="SALARIO"
             android:textColor="@color/abc_primary_text_disable_only_material_light"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="@dimen/abc_action_bar_content_inset_material" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -19,19 +20,22 @@
             android:onClick="enviarDatos"/>
     </TableRow>
     <TableRow>
-        <TextView android:text="0-$200"/>
+        <TextView android:text="0-$200"
+            android:textSize="@dimen/abc_action_bar_content_inset_material" />
         <CheckBox android:id="@+id/check1"
             android:text=""
             android:onClick="metodo1"/>
     </TableRow>
     <TableRow>
-        <TextView android:text="$200-$500"/>
+        <TextView android:text="$200-$500"
+            android:textSize="@dimen/abc_action_bar_content_inset_material" />
         <CheckBox android:id="@+id/check2"
             android:text=""
             android:onClick="metodo2"/>
     </TableRow>
     <TableRow>
-        <TextView android:text="$500-mas"/>
+        <TextView android:text="$500-mas"
+            android:textSize="@dimen/abc_action_bar_content_inset_material" />
         <CheckBox android:id="@+id/check3"
             android:text=""
             android:onClick="metodo3"/>
@@ -40,16 +44,19 @@
     <TableRow>
         <TextView android:text="TIPO DE CONTRATACION"
             android:textColor="@color/abc_primary_text_material_light"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="@dimen/abc_action_bar_content_inset_material" />
     </TableRow>
     <TableRow>
-        <TextView android:text="Tiempo Parcial"/>
+        <TextView android:text="Tiempo Parcial"
+            android:textSize="@dimen/abc_action_bar_content_inset_material" />
         <CheckBox android:id="@+id/check4"
             android:text=""
             android:onClick="metodo4"/>
     </TableRow>
     <TableRow>
-        <TextView android:text="Tiempo Completo"/>
+        <TextView android:text="Tiempo Completo"
+            android:textSize="@dimen/abc_action_bar_content_inset_material" />
         <CheckBox android:id="@+id/check5"
             android:text=""
             android:onClick="metodo5"/>
@@ -57,22 +64,26 @@
     <TableRow>
         <TextView android:text="GENERO"
             android:textColor="@color/abc_primary_text_disable_only_material_light"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="@dimen/abc_action_bar_content_inset_material" />
     </TableRow>
     <TableRow>
-        <TextView android:text="Masculino"/>
+        <TextView android:text="Masculino"
+            android:textSize="@dimen/abc_action_bar_content_inset_material" />
         <CheckBox android:id="@+id/check6"
             android:text=""
             android:onClick="metodo6"/>
     </TableRow>
     <TableRow>
-        <TextView android:text="Femenino"/>
+        <TextView android:text="Femenino"
+            android:textSize="@dimen/abc_action_bar_content_inset_material" />
         <CheckBox android:id="@+id/check7"
             android:text=""
             android:onClick="metodo7"/>
     </TableRow>
     <TableRow>
-        <TextView android:text="Por Defecto"/>
+        <TextView android:text="Por Defecto"
+            android:textSize="@dimen/abc_action_bar_content_inset_material" />
         <CheckBox android:id="@+id/check8"
             android:text=""
             android:onClick="metodo8"/>
@@ -91,7 +102,8 @@
             android:id="@+id/textView2"
             android:layout_column="0"
             android:textColor="@color/abc_primary_text_material_light"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="@dimen/abc_action_bar_content_inset_material" />
     </TableRow>
 
     <TableRow

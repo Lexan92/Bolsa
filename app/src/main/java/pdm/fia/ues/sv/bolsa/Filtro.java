@@ -1,6 +1,7 @@
 package pdm.fia.ues.sv.bolsa;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 
-public class Filtro extends AppCompatActivity {
+public class Filtro extends Activity {
     Button listo;
 
     String consultaSalario="";
@@ -27,7 +28,7 @@ public class Filtro extends AppCompatActivity {
         if (save1.isChecked()){
             consultaSalario="BETWEEN '0' AND '200'";
         }else {
-
+            consultaSalario=null;
         }
     }
 
@@ -43,7 +44,7 @@ public class Filtro extends AppCompatActivity {
     public void metodo3(View v){
         CheckBox save3 = (CheckBox) findViewById(R.id.check3);
         if(save3.isChecked()){
-            consultaSalario="SALARIO>500";
+            consultaSalario="BETWEEN '500' AND '50000'";
         }
     }
 

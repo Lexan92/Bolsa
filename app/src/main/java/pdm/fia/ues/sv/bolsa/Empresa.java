@@ -2,6 +2,12 @@ package pdm.fia.ues.sv.bolsa;
 
 /**
  * Created by Alex on 26/4/2016.
+ *
+ * ESTA CLASE ES UNICAMENTE PROVISIONAL!!!!!!!!!!!!!!
+ *
+ *
+ *
+ *
  */
 public class Empresa {
 

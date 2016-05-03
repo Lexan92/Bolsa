@@ -10,15 +10,5 @@ import java.util.List;
  */
 public class DataSource {
     static List<Oferta> OFERTAS = new ArrayList<Oferta>();
-    //String descripcion, int salario, int vacantes, String turno, String genero, String tipo_contratacion
-    static {
-        OFERTAS.add(new Oferta("Programador",800,5,"Medio Tiempo","Indeferente","plaza fija",R.drawable.worker));
-        OFERTAS.add(new Oferta("Cocinero",300,7,"Tiempo Completo","Femenino","temporal",R.drawable.cook));
-        OFERTAS.add(new Oferta("Programador",800,5,"Medio Tiempo","Indeferente","plaza fija",R.drawable.worker));
-        OFERTAS.add(new Oferta("Cocinero",300,7,"Tiempo Completo","Femenino","temporal",R.drawable.cook));
-        OFERTAS.add(new Oferta("Programador",800,5,"Medio Tiempo","Indeferente","plaza fija",R.drawable.worker));
-        OFERTAS.add(new Oferta("Cocinero",300,7,"Tiempo Completo","Femenino","temporal",R.drawable.cook));
-        OFERTAS.add(new Oferta("Programador",800,5,"Medio Tiempo","Indeferente","plaza fija",R.drawable.worker));
-        OFERTAS.add(new Oferta("Cocinero",300,7,"Tiempo Completo","Femenino","temporal",R.drawable.cook));
-    }
+
 }
