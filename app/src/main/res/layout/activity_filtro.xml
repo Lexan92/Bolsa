@@ -3,21 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:stretchColumns="1"
-    android:background="@color/material_deep_teal_200">
+    android:background="@color/dim_foreground_material_dark">
     <TableRow>
         <TextView android:text="SALARIO"
             android:textColor="@color/abc_primary_text_disable_only_material_light"
             android:textStyle="bold"
             android:textSize="@dimen/abc_action_bar_content_inset_material" />
 
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Listo"
-            android:id="@+id/button3"
-            android:layout_column="1"
-            android:onClick="enviarDatos"/>
     </TableRow>
     <TableRow>
         <TextView android:text="0-$200"
@@ -114,5 +106,54 @@
             android:layout_column="0" />
     </TableRow>
 
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnListo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Listo"
+            android:onClick="enviarDatos"
+            android:background="#3c4faf" />
+
+        <Button
+            android:id="@+id/btnRestablecer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Reestablecer"
+            android:onClick=""
+            android:background="#a59c9c" />
+    </TableRow>
 
 </TableLayout>

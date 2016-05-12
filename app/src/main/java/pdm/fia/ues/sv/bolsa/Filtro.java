@@ -21,6 +21,7 @@ public class Filtro extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filtro);
+        listo = (Button) findViewById(R.id.btnListo);
     }
 
     public void metodo1(View v){

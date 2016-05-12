@@ -12,12 +12,16 @@ package pdm.fia.ues.sv.bolsa;
 public class Empresa {
 
     int id_empresa;
-    String nombre_empresa;
+   String nombre_empresa;
 
 
     public Empresa(int id_empresa, String nombre_empresa) {
         this.id_empresa = id_empresa;
         this.nombre_empresa = nombre_empresa;
+    }
+
+    public Empresa() {
+
     }
 
     public int getId_empresa() {

@@ -44,8 +44,8 @@ public class OfertaArrayAdapter extends ArrayAdapter<Oferta> {
         Oferta item = getItem(position);
 
         titulo.setText(item.getDescripcion());
-        subtitulo.setText(item.getGenero());
-       categoria.setImageResource(item.getCategoria());
+        subtitulo.setText((CharSequence) item.getEmpresa());
+        categoria.setImageResource(item.getCategoria());
 
         return listItemView;
     }

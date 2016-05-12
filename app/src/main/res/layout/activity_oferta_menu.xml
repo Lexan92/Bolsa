@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ofertas de Trabajo"
         android:id="@+id/textView3"
@@ -16,7 +16,9 @@
         android:layout_column="1"
         android:textSize="@dimen/abc_text_size_headline_material"
         android:textColor="@android:color/primary_text_light_nodisable"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -45,7 +47,8 @@
         android:layout_below="@+id/button"
         android:layout_toRightOf="@+id/imageView3"
         android:layout_toEndOf="@+id/imageView3"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="100dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -68,5 +71,26 @@
         android:layout_alignParentEnd="true"
         android:src="@android:drawable/ic_popup_sync"
         android:onClick="actualizarLista"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Ofertas Disponibles"
+        android:id="@+id/textView15"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:autoText="false"
+        android:background="@android:color/holo_orange_light" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:src="@drawable/ofertaempleados"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

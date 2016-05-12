@@ -1,6 +1,7 @@
 package pdm.fia.ues.sv.bolsa;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +11,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.io.Serializable;
+
+import static pdm.fia.ues.sv.bolsa.DataSource.*;
 
 
 public class AplicacionActivity extends Activity implements AdapterView.OnItemClickListener {
@@ -23,8 +27,8 @@ public class AplicacionActivity extends Activity implements AdapterView.OnItemCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aplicacion);
-
-        int cod = c.getId_candidato();
+        helper=new ControlBD(this);
+        int cod = 1;
 
 
         //Instancia del ListView
@@ -64,7 +68,13 @@ public class AplicacionActivity extends Activity implements AdapterView.OnItemCl
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Oferta ofertaActual = (Oferta) adapter1.getItem(position);
+        Intent intent = new Intent(this,SeleccionadoActivity.class);
+        intent.putExtra("parametro", (Serializable) ofertaActual);
+        startActivity(intent);
+    }
 
+    public void Salir(View v){
+        finish();
     }
 
 }

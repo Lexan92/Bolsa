@@ -7,13 +7,13 @@ import java.util.Date;
  */
 public class Solicitud {
     int id_solicitud;
-    Date fecha;
+
     int id_oferta;
     int id_candidato;
 
-    public Solicitud(int id_solicitud,Date fecha, int id_oferta, int id_candidato) {
+    public Solicitud(int id_solicitud, int id_oferta, int id_candidato) {
         this.id_solicitud = id_solicitud;
-        this.fecha = fecha;
+
 
         this.id_oferta = id_oferta;
         this.id_candidato = id_candidato;
@@ -23,12 +23,12 @@ public class Solicitud {
 
     }
 
-    public Date getFecha() {
-        return fecha;
+    public int getId_solicitud() {
+        return id_solicitud;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    public void setId_solicitud(int id_solicitud) {
+        this.id_solicitud = id_solicitud;
     }
 
 

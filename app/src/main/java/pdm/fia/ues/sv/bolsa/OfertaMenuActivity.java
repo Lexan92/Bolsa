@@ -2,24 +2,26 @@ package pdm.fia.ues.sv.bolsa;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
+
 import android.widget.ListView;
+import android.widget.Toast;
 
-import java.util.Date;
+import java.io.Serializable;
 
 
-public class OfertaMenuActivity extends Activity implements AdapterView.OnItemClickListener{
+public class OfertaMenuActivity extends Activity implements AdapterView.OnItemClickListener,Serializable{
     ListView listView;
     OfertaArrayAdapter adapter;
     ControlBD helper;
     String result1;
     String result2;
-
+int cod =1; //variable de prueba
     String result3;
     public final static int OPINION_REQUEST_CODE=1;
 
@@ -27,7 +29,9 @@ public class OfertaMenuActivity extends Activity implements AdapterView.OnItemCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_oferta_menu);
+        helper=new ControlBD(this);
 
+        iniciarTodo();
         //Instancia del ListView
         listView=(ListView) findViewById(R.id.listView);
 
@@ -65,33 +69,8 @@ public class OfertaMenuActivity extends Activity implements AdapterView.OnItemCl
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
     Oferta ofertaActual = (Oferta) adapter.getItem(position);
-        final int extra_id_oferta= ofertaActual.getId_oferta();
-        final int extra_id_empresa=ofertaActual.getId_empresa();
-        final int extra_id_cargo=ofertaActual.getId_cargo();
-        final String extra_descripcion=ofertaActual.getDescripcion();
-        final int extra_salario=ofertaActual.getSalario();
-        final int extra_vacante = ofertaActual.getVacantes();
-        final Date extra_fecha_inicio=ofertaActual.getFecha_inicio();
-        final Date extra_fecha_expirarion=ofertaActual.getFecha_expiracion();
-        final String extra_turno=ofertaActual.getTurno();
-        final String extra_genero=ofertaActual.getGenero();
-        final int extra_edad_requerida=ofertaActual.getEdad_requerida();
-        final String extra_tipo_contratacion=ofertaActual.getTipo_contratacion();
-
-        Intent intent = new Intent(this,AplicacionActivity.class);
-        intent.putExtra("var_oferta",extra_id_oferta);
-        intent.putExtra("var_empresa",extra_id_empresa);
-        intent.putExtra("var_cargo",extra_id_cargo);
-        intent.putExtra("var_descripcion",extra_descripcion);
-        intent.putExtra("var_salario",extra_salario);
-        intent.putExtra("var_vacante",extra_vacante);
-        intent.putExtra("var_fechai",extra_fecha_inicio);
-        intent.putExtra("var_fechae",extra_fecha_expirarion);
-        intent.putExtra("var_turno",extra_turno);
-        intent.putExtra("var_genero",extra_genero);
-        intent.putExtra("var_edad",extra_edad_requerida);
-        intent.putExtra("extra_tipo",extra_tipo_contratacion);
-
+        Intent intent = new Intent(this,SeleccionadoActivity.class);
+        intent.putExtra("parametro", (Serializable) ofertaActual);
         startActivity(intent);
     }
 
@@ -102,14 +81,17 @@ public class OfertaMenuActivity extends Activity implements AdapterView.OnItemCl
     }
 
     public void misAplicaciones(View v){
-        Intent intent = new Intent(this,AplicacionActivity.class);
-        startActivity(intent);
+
+        new aplicacionTask().execute();
     }
 
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
+      //este metodo recibe datos de la activity filtro
+
         super.onActivityResult(requestCode,resultCode,data);
+
         if (requestCode==OPINION_REQUEST_CODE){
             if (resultCode==RESULT_OK){
                  result1=data.getStringExtra("consultaSalario");
@@ -142,4 +124,49 @@ public class OfertaMenuActivity extends Activity implements AdapterView.OnItemCl
 
     }
 
-}
+    public void iniciarTodo(){
+        helper.abrir();
+        //String tost= helper.llenarBD();
+
+       // Toast.makeText(this,tost,Toast.LENGTH_SHORT).show();
+
+
+    boolean c= helper.consultarOferta();
+    helper.cerrar();
+    Toast.makeText(this,"Consulto a ofertas",Toast.LENGTH_SHORT).show();}
+
+
+    private class aplicacionTask extends AsyncTask<Void,Void,Void>{
+
+
+        @Override
+        protected void onPreExecute() {
+          Toast.makeText(getApplicationContext(),"Buscando tus aplicaciones...Espera",Toast.LENGTH_LONG).show();
+
+
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            Intent intent = new Intent(getApplicationContext(),AplicacionActivity.class);
+            startActivity(intent);
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+
+            helper=new ControlBD(getApplicationContext());
+            iniciarTodo();
+            //adapter.notifyDataSetChanged();
+            listView=(ListView) findViewById(R.id.listView);
+           // Inicializar el adaptador con la fuente de datos
+          adapter= new OfertaArrayAdapter(getApplicationContext(), DataSource.OFERTAS);
+
+            //Relacionando la lista con el adaptador
+            listView.setAdapter(adapter);
+
+        }
+    }
+
+}//fin clase principal
